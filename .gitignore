@@ -5,3 +5,4 @@ Include
 Scripts
 .env
 __pycache__
+asset_manager/utils/build_destination_path.py

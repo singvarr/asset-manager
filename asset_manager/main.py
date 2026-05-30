@@ -33,7 +33,8 @@ if __name__ == "__main__":
 
             excel_reader = ExcelReader(
                 workbook_path=sanitized_input.excel_workbook_path,
-                table_name="ОС",
+                table_name=sanitized_input.excel_table_name,
+                worksheet_name=sanitized_input.excel_worksheet_name,
                 remove_last_row=True,
             )
             data = excel_reader.run()

@@ -10,9 +10,16 @@ class ExcelReader(Generic[T]):
     """Converts contents of smart table to list of dictionaries"""
     _workbook = None
 
-    def __init__(self, workbook_path: Path, table_name: str, remove_last_row: bool = False):
+    def __init__(
+        self,
+        workbook_path: Path,
+        worksheet_name: str,
+        table_name: str,
+        remove_last_row: bool = False
+    ):
         self._workbook = ExcelReader._load_workbook(self, str(workbook_path))
         self._table_name = table_name
+        self._worksheet_name = worksheet_name
 
         self._remove_last_row = remove_last_row
 
@@ -28,7 +35,7 @@ class ExcelReader(Generic[T]):
             (
                 worksheet
                 for worksheet in self._workbook.worksheets
-                if worksheet.title == self._table_name
+                if worksheet.title == self._worksheet_name
             ),
             None
         )

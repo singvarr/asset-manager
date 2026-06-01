@@ -58,7 +58,10 @@ if __name__ == "__main__":
             all_operations = '\n'.join(
                 f"Source: {file.source}, destination: {file.destination}" for file in files_to_move
             )
-            click.confirm(text=f"Files to move:\n{all_operations}\n", abort=True)
+            click.confirm(
+                text=f"Move {len(files_to_move)} files?\nFiles to move:\n{all_operations}\n",
+                abort=True,
+            )
 
             for file in files_to_move:
                 # TODO: implement atomiticity of operations

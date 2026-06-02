@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 @dataclass
-class AssetsMoveInput:
+class Config:
     excel_workbook_path: Path
     source_files_folder: Path
     destination_folder: Path

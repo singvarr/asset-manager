@@ -11,3 +11,4 @@ class Config:
     document_type: str
     excel_worksheet_name: str
     excel_table_name: str
+    excel_pk_column_name: str

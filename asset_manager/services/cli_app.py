@@ -14,7 +14,7 @@ from asset_manager.utils.build_destination_path import build_destination_path
 
 class CLIApp:
     _config: Optional[Config] = None
-    _KEYS_TO_RELOAD = ["R", "r"]
+    _KEYS_TO_RELOAD = ["R", "r", "К", "к"]
 
     def _load_environment(self):
         load_dotenv(override=True)
